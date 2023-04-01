@@ -15,37 +15,37 @@ export const Navbar = () => {
             </button>
             <div className="collapse navbar-collapse justify-content-end me-5 " id="navbarNav">
                 <ul className="navbar-nav me-5">
-                    <Link to="/">
+                    <Link to="/" style={{textDecoration:"none"}}>
 					    <li className="nav-item ">
                             <p className="nav-link active text-secondary fs-5 " aria-current="page" >Home</p>
                         </li>
 					</Link>
-					<Link to="/characters/all">
+					<Link to="/characters/all" style={{textDecoration:"none"}}>
                         <li className="nav-item">
                             <p className="nav-link text-secondary fs-5">Characters</p>
                         </li>
 					</Link>
-					<Link to="/planets/all">
+					<Link to="/planets/all" style={{textDecoration:"none"}}>
                         <li className="nav-item">
                             <p className="nav-link text-secondary fs-5" >Planets</p>
                         </li>
 					</Link>
-					<Link to="/starships/all">
+					<Link to="/starships/all" style={{textDecoration:"none"}}>
 					    <li className="nav-item">
                             <p className="nav-link text-secondary fs-5">Starships</p>
                         </li>
 					</Link>
-					<Link to="/games">
+					<Link to="/games" style={{textDecoration:"none"}}>
 					    <li className="nav-item">
-                            <p className="nav-link text-secondary fs-5">Games</p>
+                            <p className="nav-link text-secondary fs-5">Videogames</p>
                         </li>
 					</Link>
-					<Link to="/films/all">
+					<Link to="/films/all" style={{textDecoration:"none"}}>
 					    <li className="nav-item">
-                            <p className="nav-link text-secondary fs-5">Films and Series</p>
+                            <p className="nav-link text-secondary fs-5">Films&Series</p>
                         </li>
 					</Link>
-					<Link to="/philosophy">
+					<Link to="/philosophy" style={{textDecoration:"none"}}>
 					    <li className="nav-item">
                             <p className="nav-link text-secondary fs-5">Philosophy</p>
                         </li>

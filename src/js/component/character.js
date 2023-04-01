@@ -1,16 +1,38 @@
-import React from "react";
+import React, {useContext} from "react";
 import "../../styles/navbar.css";
 import characterImage from "../../img/personajes.png";
-import { Jumbotron } from "./jumbotrom";
+import { JumbotronVistas } from "./jumbotronvistas";
+import { Context } from "../store/appContext";
+import { CardCharacters } from "./card";
+
 
 
 export const Character = () => {
+
+    const {store,actions} = useContext(Context)
+
     return (
         <div>
-            <Jumbotron
+            <JumbotronVistas
             titulo1="Characters"
             imagen1={characterImage}
             />
-        </div>
+
+            <div className="container mt-3">
+                    {store.character?.results?.map((character,index)=>{
+			        return (
+                        
+                            <div className="mt-2" key={index}>
+                                <CardCharacters 
+                                title={character.name} 
+                                image={`${"https://starwars-visualguide.com/assets/img/characters/"}${index+1}${".jpg"}`} 
+                                character={character} 
+                                id={index} 
+                                />
+                            </div>  
+                    )
+		            })}
+                </div>
+            </div>    
     )
 }
