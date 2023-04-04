@@ -53,6 +53,7 @@ const Layout = () => {
 					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" />
 		</div>
 	);
 };

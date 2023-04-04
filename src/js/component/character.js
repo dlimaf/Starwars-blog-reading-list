@@ -19,10 +19,11 @@ export const Character = () => {
             />
 
             <div className="container mt-3">
+                <div className="row">
                     {store.character?.results?.map((character,index)=>{
 			        return (
                         
-                            <div className="mt-2" key={index}>
+                            <div className="col-md-3 mt-4" key={index}>
                                 <CardCharacters 
                                 title={character.name} 
                                 image={`${"https://starwars-visualguide.com/assets/img/characters/"}${index+1}${".jpg"}`} 
@@ -32,6 +33,7 @@ export const Character = () => {
                             </div>  
                     )
 		            })}
+                </div>
                 </div>
             </div>    
     )

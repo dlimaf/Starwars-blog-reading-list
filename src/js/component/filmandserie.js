@@ -18,10 +18,11 @@ export const FilmAndSerie = () => {
             imagen1={filmsImage}
             />
             <div className="container mt-3">
+                <div className="row">
 		
                 {store.films?.results?.map((films,index)=>{
                 return (
-                    <div className="mt-2" key={index}>
+                    <div className="col-md-3 mt-4" key={index}>
                         <CardFilms 
                         title={films.title} 
                         image={`${"https://starwars-visualguide.com/assets/img/films/"}${index+1}${".jpg"}`} 
@@ -30,6 +31,7 @@ export const FilmAndSerie = () => {
                     </div> 
                 )
             })}
+            </div>
         </div>
         </div>
     )

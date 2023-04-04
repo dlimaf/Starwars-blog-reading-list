@@ -13,7 +13,7 @@ export const Jumbotron = (props) => {
           <img
             src={props.imagen1}
             className="card-img-top w-100"
-            style={{ objectFit: "cover", height: "400px", borderRadius:"15px"}}
+            style={{ objectFit: "cover", height: "400px", borderRadius:"15px", boxShadow: "2px 4px 10px 2px rgba(0, 0, 0, 0.2)",}}
             alt="..."
           />
         </div>

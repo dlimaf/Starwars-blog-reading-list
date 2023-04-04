@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import botonprincipal from "../../img/maytheforce.png";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+	const {store,actions} = useContext(Context) 
 	return (
-		<nav className="navbar navbar-expand-lg mb-4 pe-5">
+		<nav className="navbar navbar-expand-lg mb-4 pe-2">
 			<Link to="/">
 				<span className="navbar-brand mb-0 h1">
 					<img id="logotipostarwars" src={botonprincipal}/>
@@ -17,41 +19,75 @@ export const Navbar = () => {
                 <ul className="navbar-nav me-5">
                     <Link to="/" style={{textDecoration:"none"}}>
 					    <li className="nav-item ">
-                            <p className="nav-link active text-secondary fs-5 " aria-current="page" >Home</p>
-                        </li>
+                            <p className="nav-link active text-secondary" style={{fontSize: "1.1rem", transition: "background-color 0.3s ease"}} aria-current="page" 
+							onMouseEnter={(e) => {e.target.style.backgroundColor = "gray"}}
+       						 onMouseLeave={(e) => {e.target.style.backgroundColor = "transparent"}} >Home</p>
+						</li>
 					</Link>
 					<Link to="/characters/all" style={{textDecoration:"none"}}>
                         <li className="nav-item">
-                            <p className="nav-link text-secondary fs-5">Characters</p>
+                              <p className="nav-link active text-secondary" style={{fontSize: "1.1rem", transition: "background-color 0.3s ease"}} aria-current="page" 
+							onMouseEnter={(e) => {e.target.style.backgroundColor = "gray"}}
+       						 onMouseLeave={(e) => {e.target.style.backgroundColor = "transparent"}} >Characters</p>
                         </li>
 					</Link>
 					<Link to="/planets/all" style={{textDecoration:"none"}}>
                         <li className="nav-item">
-                            <p className="nav-link text-secondary fs-5" >Planets</p>
+						<p className="nav-link active text-secondary" style={{fontSize: "1.1rem", transition: "background-color 0.3s ease"}} aria-current="page" 
+							onMouseEnter={(e) => {e.target.style.backgroundColor = "gray"}}
+       						 onMouseLeave={(e) => {e.target.style.backgroundColor = "transparent"}} >Planets</p>
                         </li>
 					</Link>
 					<Link to="/starships/all" style={{textDecoration:"none"}}>
 					    <li className="nav-item">
-                            <p className="nav-link text-secondary fs-5">Starships</p>
+						<p className="nav-link active text-secondary" style={{fontSize: "1.1rem", transition: "background-color 0.3s ease"}} aria-current="page" 
+							onMouseEnter={(e) => {e.target.style.backgroundColor = "gray"}}
+       						 onMouseLeave={(e) => {e.target.style.backgroundColor = "transparent"}} >Starships</p>
                         </li>
 					</Link>
 					<Link to="/games" style={{textDecoration:"none"}}>
 					    <li className="nav-item">
-                            <p className="nav-link text-secondary fs-5">Videogames</p>
+						<p className="nav-link active text-secondary" style={{fontSize: "1.1rem", transition: "background-color 0.3s ease"}} aria-current="page" 
+							onMouseEnter={(e) => {e.target.style.backgroundColor = "gray"}}
+       						 onMouseLeave={(e) => {e.target.style.backgroundColor = "transparent"}} >Videogames</p>
                         </li>
 					</Link>
 					<Link to="/films/all" style={{textDecoration:"none"}}>
 					    <li className="nav-item">
-                            <p className="nav-link text-secondary fs-5">Films&Series</p>
+						<p className="nav-link active text-secondary" style={{fontSize: "1.1rem", transition: "background-color 0.3s ease"}} aria-current="page" 
+							onMouseEnter={(e) => {e.target.style.backgroundColor = "gray"}}
+       						 onMouseLeave={(e) => {e.target.style.backgroundColor = "transparent"}} >Films&Series</p>
                         </li>
 					</Link>
 					<Link to="/philosophy" style={{textDecoration:"none"}}>
 					    <li className="nav-item">
-                            <p className="nav-link text-secondary fs-5">Philosophy</p>
+						<p className="nav-link active text-secondary" style={{fontSize: "1.1rem", transition: "background-color 0.3s ease"}} aria-current="page" 
+							onMouseEnter={(e) => {e.target.style.backgroundColor = "gray"}}
+       						 onMouseLeave={(e) => {e.target.style.backgroundColor = "transparent"}} >Philosophy</p>
                         </li>
 					</Link>
-                    
-                </ul>
+					<li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">{"Favorites " + store.favorites.length}</a>
+                        <ul className="dropdown-menu">
+                            {store.favorites.length == 0 ? (
+								<li className="dropdown-item">Empty</li>
+							) :
+							(
+								store.favorites.map((favorite,i) => {
+									return (
+										<li className="dropdown-item d-flex justify-content-between">
+											{favorite.name}
+											<i className="far fa-trash-alt text-black bg-transparent" onClick={()=>actions.deleteFavorite(i)} />
+										</li>
+										
+									)
+								})
+							)
+							}
+							<li className="dropdown-item"></li>
+                        </ul>
+                    </li>
+				</ul>
             </div>
 
 		</nav>

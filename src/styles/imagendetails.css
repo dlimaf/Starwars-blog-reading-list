@@ -1,0 +1,36 @@
+#titulo {
+    position: absolute;
+    width: 293px;
+    height: 39px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 32px;
+    color: #FFFFFF;
+}
+#personajes {
+    position: absolute;
+    width: 234px;
+    height: 41px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 25px;
+    letter-spacing: 0.205em;
+    color: #8BFE55;
+}
+#parrafo {
+    position: absolute;
+    width: 423px;
+    height: 275px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.205em;
+    color: #FFFFFF;
+
+}

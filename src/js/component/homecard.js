@@ -9,7 +9,7 @@ export const Homecard = (props) => {
         width: "100%",
         height: "300px",
         padding: "0",
-        //borderRadius: "15px",
+        boxShadow: "2px 4px 10px 2px rgba(0, 0, 0, 0.2)",
       }}
     >
       <div
