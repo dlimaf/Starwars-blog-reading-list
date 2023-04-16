@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import botonprincipal from "../../img/maytheforce.png";
 import { Context } from "../store/appContext";
+import "../../styles/navbar.css";
 
 export const Navbar = () => {
 	const {store,actions} = useContext(Context) 
@@ -68,7 +69,7 @@ export const Navbar = () => {
 					</Link>
 					<li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">{"Favorites " + store.favorites.length}</a>
-                        <ul className="dropdown-menu">
+                        <ul className="dropdown-menu dropdown-menu-end">
                             {store.favorites.length == 0 ? (
 								<li className="dropdown-item">Empty</li>
 							) :
@@ -84,7 +85,6 @@ export const Navbar = () => {
 								})
 							)
 							}
-							<li className="dropdown-item"></li>
                         </ul>
                     </li>
 				</ul>
